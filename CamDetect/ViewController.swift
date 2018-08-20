@@ -14,6 +14,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
 //    @IBOutlet weak var infoText: UILabel!
     
+    @IBOutlet weak var textBg: UIImageView!
+    @IBOutlet weak var objLabel: UILabel!
     @IBOutlet weak var infoText: UITextView!
     
     override func viewDidLoad() {
@@ -33,7 +35,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         view.layer.addSublayer(previewLayer)
 
-        infoText.layer.zPosition = 1
+        textBg.layer.zPosition = 1
+        infoText.layer.zPosition = 2
+        infoText.isEditable = false
+        objLabel.layer.zPosition = 2
 //        infoText.numberOfLines = 0
         
         
@@ -122,10 +127,27 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                             foundDeleteStart = true
                             deleteStart = htmlContentString.index(before: Ind)
                         }
+                        if (htmlContentString[htmlContentString.index(before: Ind)] == "<"
+                            && htmlContentString[htmlContentString.index(after: Ind)] == "p") {
+                            foundDeleteStart = true
+                            deleteStart = htmlContentString.index(before: Ind)
+                        }
+                        if (htmlContentString[htmlContentString.index(before: Ind)] == "<"
+                            && htmlContentString[htmlContentString.index(after: Ind)] == "m") {
+                            foundDeleteStart = true
+                            deleteStart = htmlContentString.index(before: Ind)
+                        }
                     }
                     if (htmlContentString[Ind] == "b") {
                         if (htmlContentString[htmlContentString.index(before: Ind)] == "<"
                             && htmlContentString[htmlContentString.index(after: Ind)] == ">") {
+                            foundDeleteStart = true
+                            deleteStart = htmlContentString.index(before: Ind)
+                        }
+                    }
+                    if (htmlContentString[Ind] == "w") {
+                        if (htmlContentString[htmlContentString.index(before: Ind)] == "<"
+                            && htmlContentString[htmlContentString.index(after: Ind)] == "b") {
                             foundDeleteStart = true
                             deleteStart = htmlContentString.index(before: Ind)
                         }
@@ -141,6 +163,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                         && htmlContentString[htmlContentString.index(before: Ind)] == "<"
                         && (htmlContentString[htmlContentString.index(after: Ind)] == "a"
                             ||  htmlContentString[htmlContentString.index(after: Ind)] == "b"
+                            ||  htmlContentString[htmlContentString.index(after: Ind)] == "w"
                             ||  htmlContentString[htmlContentString.index(after: Ind)] == "i"
                             ||  htmlContentString[htmlContentString.index(after: Ind)] == "s")) {
                         foundDeleteStartClose = true
@@ -177,6 +200,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 print(result)
                 DispatchQueue.main.async {
                     self.infoText.text = String(result)
+                    self.objLabel.text = urlSearchObj
 //                    self.infoText.sizeToFit()
                 }
                 
@@ -204,7 +228,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
-        guard let model = try? VNCoreMLModel(for: Resnet50().model) else { return }
+        guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else { return }
         let request = VNCoreMLRequest(model: model) { (finishedReq, err) in
             //check error TODO
             

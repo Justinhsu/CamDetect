@@ -17,6 +17,8 @@
 		958DE8442127E6590013B305 /* CamDetectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE8432127E6590013B305 /* CamDetectUITests.swift */; };
 		958DE8522127EF140013B305 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 958DE8512127EF140013B305 /* SqueezeNet.mlmodel */; };
 		958DE8542127F27B0013B305 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 958DE8532127F27B0013B305 /* Resnet50.mlmodel */; };
+		95D0C35D212B13E200165AFD /* Screen Shot 2018-08-21 at 12.20.50 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D0C35C212B13E200165AFD /* Screen Shot 2018-08-21 at 12.20.50 AM.png */; };
+		95D0C35F212B1A0800165AFD /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 95D0C35E212B1A0800165AFD /* Inceptionv3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		958DE8452127E6590013B305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		958DE8512127EF140013B305 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		958DE8532127F27B0013B305 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
+		95D0C35C212B13E200165AFD /* Screen Shot 2018-08-21 at 12.20.50 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2018-08-21 at 12.20.50 AM.png"; sourceTree = "<group>"; };
+		95D0C35E212B1A0800165AFD /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +112,9 @@
 				958DE8242127E6580013B305 /* Main.storyboard */,
 				958DE8512127EF140013B305 /* SqueezeNet.mlmodel */,
 				958DE8532127F27B0013B305 /* Resnet50.mlmodel */,
+				95D0C35E212B1A0800165AFD /* Inceptionv3.mlmodel */,
 				958DE82A2127E6590013B305 /* Assets.xcassets */,
+				95D0C35C212B13E200165AFD /* Screen Shot 2018-08-21 at 12.20.50 AM.png */,
 				958DE82C2127E6590013B305 /* LaunchScreen.storyboard */,
 				958DE82F2127E6590013B305 /* Info.plist */,
 				958DE8272127E6580013B305 /* CamDetect.xcdatamodeld */,
@@ -241,6 +247,7 @@
 				958DE82E2127E6590013B305 /* LaunchScreen.storyboard in Resources */,
 				958DE82B2127E6590013B305 /* Assets.xcassets in Resources */,
 				958DE8262127E6580013B305 /* Main.storyboard in Resources */,
+				95D0C35D212B13E200165AFD /* Screen Shot 2018-08-21 at 12.20.50 AM.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				958DE8542127F27B0013B305 /* Resnet50.mlmodel in Sources */,
+				95D0C35F212B1A0800165AFD /* Inceptionv3.mlmodel in Sources */,
 				958DE8232127E6580013B305 /* ViewController.swift in Sources */,
 				958DE8292127E6580013B305 /* CamDetect.xcdatamodeld in Sources */,
 				958DE8212127E6580013B305 /* AppDelegate.swift in Sources */,
